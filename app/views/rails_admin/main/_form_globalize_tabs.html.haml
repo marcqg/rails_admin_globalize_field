@@ -15,5 +15,6 @@
     = form.fields_for field.name, field.translations[locale], wrapper: false do |nested_form|
       .fields.tab-pane{ class: "#{klass} #{'active' if locale == field.current_locale}" }
         = nested_form.generate({:action => :nested, :model_config => field.associated_model_config, :nested_in => field.name })
+  = check_box_tag field.name, false
 .globalize-help
   = form.help_for(field)
